@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>MS_gateway</module>
+        <module>MS_service</module>
+    </modules>
+
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.3.5.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>org.example</groupId>
+    <artifactId>microService</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>MS</name>
+    <description>微服务项目</description>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>8</java.version>
+
+        <bdp-starter.version>1.0-SNAPSHOT</bdp-starter.version>
+
+        <spring-cloud-alibaba-dependencies.version>2.2.6.RELEASE</spring-cloud-alibaba-dependencies.version>
+        <spring-boot-dependencies.version>2.3.12.RELEASE</spring-boot-dependencies.version>
+        <spring-boot-admin-dependencies.version>2.3.1</spring-boot-admin-dependencies.version>
+        <spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
+        <redisson-spring-boot-starter.version>3.14.0</redisson-spring-boot-starter.version>
+        <druid-spring-boot-starter.verision>1.1.22</druid-spring-boot-starter.verision>
+        <swagger-spring-boot-starter.version>1.9.0.RELEASE</swagger-spring-boot-starter.version>
+        <mybatis-plus.version>3.4.3.1</mybatis-plus.version>
+        <wx-java-mp-spring-boot-starter.version>3.9.1.B</wx-java-mp-spring-boot-starter.version>
+        <wx-java-miniapp-spring-boot-starter.version>3.9.1.B</wx-java-miniapp-spring-boot-starter.version>
+        <wx-java-pay-spring-boot-starter.version>3.9.1.B</wx-java-pay-spring-boot-starter.version>
+        <seata-spring-boot-starter.version>1.4.2</seata-spring-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
+        <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
+        <commons-collections4.version>4.2</commons-collections4.version>
+        <commons-io.version>2.6</commons-io.version>
+        <mysql-connector-java.version>8.0.17</mysql-connector-java.version>
+        <postgresql.version>42.2.5</postgresql.version>
+        <oracle.version>11.2.0.3</oracle.version>
+        <sqlserver.version>4.0</sqlserver.version>
+        <hutool-all.version>4.6.1</hutool-all.version>
+        <aliyun-java-sdk-core.version>4.0.3</aliyun-java-sdk-core.version>
+        <fastjson.version>1.2.78</fastjson.version>
+        <commons-pool2.version>2.5.0</commons-pool2.version>
+        <getui-dependencies.version>4.1.0.3</getui-dependencies.version>
+        <jpush-client-dependencies.version>3.4.2</jpush-client-dependencies.version>
+        <jiguang-common-dependencies.version>1.1.4</jiguang-common-dependencies.version>
+        <netty-all-dependencies.version>4.1.6.Final</netty-all-dependencies.version>
+        <fastdfs-client.version>1.26.4</fastdfs-client.version>
+        <transmittable.version>2.11.5</transmittable.version>
+        <xstream.version>1.4.12</xstream.version>
+        <easyexcel.version>2.2.8</easyexcel.version>
+        <kernel.version>7.0.7</kernel.version>
+        <layout.version>7.0.7</layout.version>
+        <font-asian.version>7.0.7</font-asian.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <pinyin4j.version>2.5.1</pinyin4j.version>
+        <drools.version>7.52.0.Final</drools.version>
+        <thumbnailator.version>0.4.13</thumbnailator.version>
+        <javacv.version>1.5.6</javacv.version>
+        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <swagger.version>1.6.2</swagger.version>
+        <swagger2.version>3.0.0</swagger2.version>
+        <knife4j.version>2.0.5</knife4j.version>
+
+        <!-- mybatis -->
+        <mybatis.version>3.5.1</mybatis.version>
+        <mybatis-spring.version>2.0.1</mybatis-spring.version>
+        <pagehelper-spring-boot-starter.version>1.2.12</pagehelper-spring-boot-starter.version>
+
+        <logback-classic.version>1.2.2</logback-classic.version>
+        <jjwt.version>0.9.0</jjwt.version>
+        <hadoop.version>2.7.3</hadoop.version>
+        <hive.jdbc.version>2.1.0</hive.jdbc.version>
+        <hbase.version>1.3.0</hbase.version>
+        <mongo-java-driver.version>3.4.2</mongo-java-driver.version>
+        <oshi.core.version>3.9.1</oshi.core.version>
+        <phoenix.version>5.0.0-HBase-2.0</phoenix.version>
+        <lombok.version>1.18.12</lombok.version>
+        <groovy.version>3.0.10</groovy.version>
+        <hessian.version>4.0.63</hessian.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <jna.version>4.5.2</jna.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+<!--            hutool工具包-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+<!--json文件处理-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+<!--            对象连接池，数据库连接，网络IO，大数据对象等 类似于数据库连接池，重写其中方法或实现部分接口就能实现对象池的配置-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+
+<!--            数据库处理-->
+<!--            MP（mybatis-plus）核心文件，一般添加上它就能使用Mp-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+<!--            阿里数据库连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.verision}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+
+<!--spirngboot依赖-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+<!--            微服务依赖-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+
+
+</project>
