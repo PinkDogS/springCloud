@@ -3,20 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>microService</artifactId>
+        <artifactId>MS_service</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>uas_service</artifactId>
+    <artifactId>MS_uas</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-
 
     <dependencies>
         <!--        lombok表达式-->
@@ -29,7 +29,12 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-
+<!--        动态数据库连接-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>3.4.1</version>
+        </dependency>
         <!--        MP SQL处理-->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -115,7 +120,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 

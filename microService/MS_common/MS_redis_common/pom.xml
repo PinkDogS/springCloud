@@ -7,16 +7,13 @@
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-
-    <modules>
-        <module>MS_uas</module>
-    </modules>
-
-
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>MS_service</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+
+    <artifactId>MS_redis_common</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
 </project>

@@ -8,6 +8,7 @@
     <modules>
         <module>MS_gateway</module>
         <module>MS_service</module>
+        <module>MS_common</module>
     </modules>
 
     <parent>
@@ -110,6 +111,24 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+<!--            redis相关依赖，集成jedis-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-spring-boot-starter.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.redisson</groupId>
+                        <artifactId>redisson-spring-data-23</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-data-21</artifactId>
+                <version>${redisson-spring-boot-starter.version}</version>
             </dependency>
 
 <!--            对象连接池，数据库连接，网络IO，大数据对象等 类似于数据库连接池，重写其中方法或实现部分接口就能实现对象池的配置-->
